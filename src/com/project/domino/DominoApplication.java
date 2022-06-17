@@ -1,5 +1,7 @@
 package com.project.domino;
 
+import java.io.File;
+
 import com.project.domino.bank.DominoCollection;
 import com.project.domino.hand.DominoHand;
 
@@ -24,6 +26,7 @@ public class DominoApplication {
 		System.out.println("Printing DominoHand after running match for 2 numbers: ");
 		dominoHand.displayDominoes();
 		System.out.println("Testing total " + dominoHand.total());
+		dominoHand.writeToFile(new File("hand.txt"));
 	}
 
 }

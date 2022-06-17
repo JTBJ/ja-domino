@@ -1,7 +1,14 @@
 package com.project.domino.model;
 
-public class Domino {
+import java.io.Serializable;
 
+public class Domino implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	// == instance variables ==
 	private int d1;
 	private int d2;

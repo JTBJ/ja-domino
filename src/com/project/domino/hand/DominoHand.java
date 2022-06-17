@@ -1,5 +1,9 @@
 package com.project.domino.hand;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -85,6 +89,16 @@ public class DominoHand {
 	
 	public int total() {
 		return list.stream().filter(d -> d != null).mapToInt(d -> d.sum()).sum();
+	}
+	
+	public void writeToFile(File file) {
+		try (ObjectOutputStream outputStream = 
+				new ObjectOutputStream(new FileOutputStream(file))) {
+			outputStream.writeObject(list);
+			outputStream.flush();
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// == toString() ==
